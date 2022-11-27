@@ -1,0 +1,18 @@
+p{
+    border: 1px;
+    border-style: dashed;
+    outline-color: rgb(237, 100, 100);
+    
+}
+body{
+    background-color: mediumaquamarine;
+}
+span{
+    border-color: azure;
+    border-width: 1px;
+    border border-style:dashed;
+}
+
+h3{
+    outline-color: rgb(243, 3, 183); 
+}
