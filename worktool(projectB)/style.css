@@ -1,177 +1,313 @@
 
 h1{
-    font-style: oblique;
-    display: flex;
-    justify-content: center;
-    color: rgb(43, 48, 47);
+  font-style: oblique;
+  display: flex;
+  justify-content: center;
+  color: rgb(43, 48, 47);
 }
 h4{
-    font-style: oblique;
-    font-size: 40px;
-    margin-bottom: 100px;
-    background:linear-gradient(to right,#fdfdfd,#ebedee)
+  font-style: oblique;
+  font-size: 40px;
+  margin-bottom: 100px;
+  background:linear-gradient(to right,#fdfdfd,#ebedee)
 }
 body{
-  background: blanchedalmond;
+background: blanchedalmond;
 }
 h6{
-    font-style: unset;
-    display: flex;
-    color: rgba(0, 255, 94, 0.999);
+  font-style: unset;
+  display: flex;
+  color: rgba(0, 255, 94, 0.999);
 }
 
 
 
 p{
-    
-    font-family: fantasy;
-    font-size: 16px;
-    font-style: italic;
-    text-align: center;
-    color: honeydew;
+  
+  font-family: fantasy;
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+  color: honeydew;
 }
 /* border of P5.js */
 .canvasDiv{
-    display: flex;
-    justify-content: center;
-    border-color: rgb(4, 255, 138);
-    border-width: 2px;
-    border-style: groove;
-
+  display: flex;
+  justify-content: center;
+  border-color: rgb(4, 255, 138);
+  border-width: 8px;
+  border-left: 8px;
+  border-style: groove;
+  border-color: rgb(118, 244, 238);
+animation-name: flash_border;
+animation-duration: 6s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+-webkit-animation-name: flash_border;
+-webkit-animation-duration: 2s;
+-webkit-animation-timing-function: linear;
+-webkit-animation-iteration-count: infinite;
+-moz-animation-name: flash_border;
+-moz-animation-duration: 2s;
+-moz-animation-timing-function: linear;
+-moz-animation-iteration-count: infinite;
 }
 h3{
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
-    font-style: inherit;
-    color: rgb(247, 255, 1);
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  font-style: inherit;
+  color: rgb(247, 255, 1);
 }
 
 
 /* #icons{
-    /* position: relative; */
-    /* margin-top: 0px;
-    padding-top: 0px;
-      
+  /* position: relative; */
+  /* margin-top: 0px;
+  padding-top: 0px;
+    
 } */
 /* #classroom{
-    width: 10%;
-    height: 10%;
-    margin: 45px;
+  width: 10%;
+  height: 10%;
+  margin: 45px;
 }
 #brightspace{
-    width: 10%;
-    height: 10%;
-    margin: 40px;
+  width: 10%;
+  height: 10%;
+  margin: 40px;
 }
 
 #calendar{
-    width: 10%;
-    height: 10%;
-    margin: 45px;
+  width: 10%;
+  height: 10%;
+  margin: 45px;
 }
 #quizlet{
-    width: 10%;
-    height: 10%;
-    margin: 45px;
+  width: 10%;
+  height: 10%;
+  margin: 45px;
 }
 #translate{
-    width: 10%;
-    height: 10%;
-    margin: 45px;
+  width: 10%;
+  height: 10%;
+  margin: 45px;
 }
 #inbox{
-    width: 10%;
-    height: 10%;
-    margin: 45px;
+  width: 10%;
+  height: 10%;
+  margin: 45px;
 }  */
 .hero{
-    margin-top: 150px;
-    width: 100%;
-    height: 100vh;
-    background: blanchedalmond;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  margin-top: 150px;
+  width: 100%;
+  height: 100vh;
+  background: blanchedalmond;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .car{
-    width:100%;
-    height:100vh;
-    background: blanchedalmond;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  width:100%;
+  height:100vh;
+  background: blanchedalmond;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .social-links{
-    display:flex;
+  display:flex;
 }
 .social-links a{
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    text-decoration: none;
-    color:#000;
-    box-shadow: 0 0 20px 10px rgba(0,0,0,0.05);
-    margin: 0 30px;
-    border-radius: 50%;
-    position: relative;
-    overflow:hidden;
-    transition:transform 0.5s;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  text-decoration: none;
+  color:#000;
+  box-shadow: 0 0 20px 10px rgba(0,0,0,0.05);
+  margin: 0 30px;
+  border-radius: 50%;
+  position: relative;
+  overflow:hidden;
+  transition:transform 0.5s;
 }
 
 /* code bellow supposed to move the icons to the center of the tranparent  */
-.social-links a .fa-solid{
-    font-size: 30px;
-    line-height: 80px;
-    position: relative;
-    z-index: 10;
-    transition: color 0.5s; 
+.social-links a .fa-solid{ */
+  font-size: 30px;
+  line-height: 80px;
+  position: relative;
+  z-index: 10;
+  transition: color 0.5s; 
 }
 .social-links a::after{
-    content: '';
-    width: 100%;
-    height: 100%;
-    top: -90px;
-    left: 0;
-    background: linear-gradient(-45deg, #ed1c94, #ffec17);
-    position: absolute;
-    transition: 0.5s;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: -90px;
+  left: 0;
+  background: linear-gradient(-45deg, #ed1c94, #ffec17);
+  position: absolute;
+  transition: 0.5s;
 }
 .social-links a:hover::after{
-    top:0;
+  top:0;
 }
 .social-links a:hover .fa-solid{
-    color:rgb(255, 255, 255);
+  color:rgb(255, 255, 255);
 }
 .social-links a:hover{
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 .text{
-    background: linear-gradient(-45deg, #00dbde, #fc00ff);
-    font-family: Poppins;
-    font-size: 30px;
-    text-transform: uppercase;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(-45deg, #00dbde, #fc00ff);
+  font-family: Poppins;
+  font-size: 30px;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .texts{
-    background: linear-gradient(-45deg, #ed1c94, #ffec17);
-    font-family: Poppins;
-    font-size: 40px;
-    text-transform: uppercase;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(-45deg, #ed1c94, #ffec17);
+  font-family: Poppins;
+  font-size: 40px;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .textss{
-    background: linear-gradient(-45deg, #7700ff, #fd0202);
-    font-family: Poppins;
-    font-size: 60px;
-    text-transform: uppercase;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(-45deg, #7700ff, #fd0202);
+  font-family: Poppins;
+  font-size: 60px;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#john{
+  color: grey;
+}
+@keyframes flash_border {
+  0% {
+    border-color: rgb(0, 255, 174);
+  }
+  50% {
+    border-color: rgb(244, 132, 227);
+  }
+  100% {
+    border-color: rgb(255, 0, 115);
+  }
 }
 
+@-webkit-keyframes flash_border {
+  0% {
+    border-color: rgb(0, 255, 76);
+  }
+  50% {
+    border-color: rgb(14, 244, 194);
+  }
+  100% {
+    border-color: red;
+  }
+}
 
+@-moz-keyframes flash_border {
+  0% {
+    border-color: rgb(228, 214, 214);
+  }
+  50% {
+    border-color: rgb(149, 94, 94);
+  }
+  100% {
+    border-color: red;
+  }
+}
+#sideNav{
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  right: -250px;
+  top: 0;
+  background:#f67c ;
+  z-index: 2;
+  text-align: left;
+  transition: 0.5s;
+}
+nav ul li{
+  list-style: none;
+margin: 50px 20px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: #fdfdfd;
+}
+#menuBtn{
+  width: 50px;
+  position: fixed;
+  right: 15px;
+  top: 35px;
+  z-index: 2;
+  cursor: pointer;;
+}
+.note{
+  margin-top: 29px;
+  position: absolute;
+  background: navajowhite;
+  width: 300px;
+  height: 50px;
+  
+}
+.area{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300px;
+  height: 0px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+}
+textarea{
+  position: relative;
+  min-width: 300px;
+  height: 200px;
+  background: #fdb3b7;
+  color: rgb(188, 84, 240);
+  font-size: 20px;
+  font-family: arial;
+  outline: none;
+  letter-spacing: 1px;
+}
+h5{
+  position:absolute;
+  color: #fff;
+  font-family: sans-serif;
+  top: -15px;
+  left:5px;
+}
 
+#x{
+  position: right;
+  top: 50%;
+  left: 88%;
+  font-size: 25px;
+  color: rgb(248, 237, 237);
+  transform: rotate(45deg);
+}
+#click:checked ~i{
+  transform: rotate(270deg);
+  transition: 0.5s;
+}#click:checked ~.area{
+  height: 200px;
+  transition: 0.5s;
+}
+
+#click{
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+} 

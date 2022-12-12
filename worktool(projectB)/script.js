@@ -1,21 +1,40 @@
-// LetmyCreature;
+let cloudx = 100;
+let cloudy = 100;
+let lightnings = [];
+let trees = [];
+
 let colSomon = "#F28080";
 let colYellow= "#EFF2D8";
 let colViolet= "#6B5B95"
 function setup() {
  let canvas = createCanvas(1420, 500);
+  lightnings.push(new Lightning());
+  lightnings.push(new Lightning(random(300, 355)));
  canvas.parent("canvasContainer")
 }
 function draw() {
-  background(200,155,mouseY);
-  
-//   I want to make if pressed bird fly
-  var y = 400;
+   background(200,155,mouseX,mouseY);
+//   draw bird flying or tree is fine 
+   var y = 400;
   stroke(255);
   strokeWeight(1);
   if(mouseIsPressed){
-  line(mouseX, y, mouseX, mouseY);
- } 
+    trees.push(new Tree(mouseX));
+  }
+
+  for (let i=0; i<trees.length;i++){
+    trees[i].display();
+  }
+  
+  makeCloud(cloudx, cloudy-50);
+  makeCloud(cloudx + 100, cloudy + 100)
+  cloudx+=0.5;
+  for (let i = 0; i < lightnings.length; i++) {
+    let l = lightnings[i];
+    l.update();
+    l.display();
+  }
+
  push()
   translate(355, 0);
   fill(colSomon);
@@ -44,30 +63,60 @@ function draw() {
   
 pop()
 }
-class Creature{
-  constructor(){
-    this.x=200;
-    this.y=200;
-    this.r=200
-    this.headAngle=0
+class Lightning {
+  constructor() {
+    this.xCoord1 = 0;
+    this.yCoord1 = 0;
+    this.xCoord2 = 0;
+    this.yCoord2 = 0;
   }
-display(){
-  noFill();
-  push();
-  translate(this.x,this.y)
-  circle(0,0,5);
-  ellipse(0,0,45,80)
-  this.drawHead();
-  pop();
 
+  display() {
+    for (var i = 0; i < random(0.5); i++) {
+      this.xCoord1 = this.xCoord2;
+      this.yCoord1 = this.yCoord2;
+      this.xCoord2 = this.xCoord1 + random(-20, 60);
+      this.yCoord2 = this.yCoord1 + random(-10, 50);
+      strokeWeight(random(1, 3));
+      push();
+      translate(0, 0);
+      stroke("yellow");
+      line(this.xCoord1, this.yCoord1, this.xCoord2, this.yCoord2);
+      pop();
+    }
+  }
+  update() {
+    if (
+      (this.xCoord2 > width) |
+      (this.xCoord2 < 0) |
+      (this.yCoord2 > 800) |
+      (this.yCoord2 < 0)
+    ) {
+      this.xCoord2 = random(0, width);
+      this.yCoord2 = 0;
+      push();
+      translate(0, 0);
+      stroke("yellow");
+      pop();
+    }
+  }
 }
-  drawHead(){
-    push();
-    translate(0,-42)
-    rotate(radians(this.headAngle))
-    
-    fill(34,90,140)
-    rect(-15,-15,30,30)
+function makeCloud(cloudx, cloudy) {
+  fill(250)
+  noStroke();
+  ellipse(cloudx, cloudy, 70, 50);
+  ellipse(cloudx + 10, cloudy + 10, 70, 50);
+  ellipse(cloudx - 20, cloudy + 10, 70, 50);
+}
+class Tree {
+  constructor(x) {
+    this.x = x;
   }
 
+  display() {
+  fill (111,72,63);
+  rect(this.x,269,20,100);
+  fill(72,115,49);
+  ellipse(this.x+7,269,70,70);
+  }
 }
